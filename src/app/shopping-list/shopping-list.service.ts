@@ -8,11 +8,16 @@ export class ShoppingListService{
         new Ingredient('Tomatoes',5),
     
       ];
-    ingredientChanged=new Subject<Ingredient[]>();  
+    ingredientChanged=new Subject<Ingredient[]>();
+    startEditing=new Subject<number>();  
+  
     
     getIngredients(){
         return this.ingredients.slice();
     }
+    getIngredient(index:number){
+      return this.ingredients[index];
+  }
 
     ingredientAdded(ingredient:Ingredient){
         this.ingredients.push(ingredient);
