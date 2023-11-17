@@ -40,6 +40,10 @@ export class RecipeService{
     getRecipe(index:number){
         return this.recipes[index];
     }
+    setRecipes(recipes:Recipe[]){
+        this.recipes = recipes;
+        this.recipeChange.next(this.recipes.slice());
+    }
 
     addIngredientsToShoppingList(ingredient:Ingredient[]){
         this.shoppinglistService.addIngredients(ingredient);
